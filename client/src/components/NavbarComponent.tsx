@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function NavbarComponent() {
   return (
     <Navbar bg="light" expand="lg">

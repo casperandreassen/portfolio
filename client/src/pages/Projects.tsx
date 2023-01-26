@@ -2,8 +2,10 @@ import '../styles/projects.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios, { type AxiosResponse } from 'axios';
 
-interface Project {
+export interface Project {
   projectId: number;
   projectName: string;
   projectShortDescription: string;
@@ -16,36 +18,19 @@ interface Project {
   pictureUrl: string;
 }
 
-const projects: Project[] = [
-  {
-    projectId: 123451,
-    projectName: 'Movsearch',
-    projectDescription: 'A React Native iOS client for the movsearch application.',
-    projectShortDescription: 'A React Native iOS client for the movsearch application.',
-    projectAuthor: 'Casper Andreassen',
-    createdDate: new Date(),
-    linkToRepo: 'https://github.com/casperandreassen/movsearch',
-    linkToLiveDemo: undefined,
-    linkToVideoDemo: 'https://youtu.be/2unZmy3-2N4',
-    pictureUrl: 'https://i.ibb.co/sRJZRKq/Logo-Circle.png'
-  },
-  {
-    projectId: 123455641,
-    projectName: 'CryptoCojo',
-    projectDescription: 'A Java backend with React frontend. ',
-    projectShortDescription: 'A Java backend with React frontend',
-    projectAuthor: 'Casper Andreassen',
-    createdDate: new Date(),
-    linkToRepo: 'https://github.com/casperandreassen/cryptocojo',
-    linkToLiveDemo: undefined,
-    linkToVideoDemo: 'https://youtu.be/dXe-v0XUmVQ',
-    pictureUrl: 'https://i.ibb.co/BsGJhyS/logo-transparent.png'
-  }
-];
 /* Image needs to be 500x500 */
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const Projects = () => {
   const navigate = useNavigate();
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    axios.get(`http://localhost:4500/api/v1/projects`).then((response: AxiosResponse) => {
+      console.log(response);
+      setProjects(response.data.data);
+    });
+  }, []);
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const openProject = (projectId: number) => {
@@ -62,7 +47,7 @@ const Projects = () => {
         </p>
       </div>
       <div className="projectsGrid">
-        {projects.map((project: Project) => {
+        {projects?.map((project: Project) => {
           return (
             <Card
               key={String(project.projectId)}
