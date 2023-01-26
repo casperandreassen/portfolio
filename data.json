@@ -1,0 +1,24 @@
+[{
+    "projectId": "123451",
+    "projectName": "Movsearch",
+    "projectDescription": "A React Native iOS client for the movsearch application.",
+    "projectShortDescription": "A React Native iOS client for the movsearch application.",
+    "projectAuthor": "Casper Andreassen",
+    "createdDate": "Thu Jan 26 2023 20:15:59 GMT+0100 (Central European Standard Time)",
+    "linkToRepo": "https://github.com/casperandreassen/movsearch",
+    "linkToLiveDemo": "",
+    "linkToVideoDemo": "https://youtu.be/2unZmy3-2N4",
+    "pictureUrl": "https://i.ibb.co/sRJZRKq/Logo-Circle.png"
+  },
+  {
+    "projectId": "123455641",
+    "projectName": "CryptoCojo",
+    "projectDescription": "A Java backend with React frontend.",
+    "projectShortDescription": "A Java backend with React frontend",
+    "projectAuthor": "Casper Andreassen",
+    "createdDate": "Thu Jan 26 2023 20:15:59 GMT+0100 (Central European Standard Time)",
+    "linkToRepo": "https://github.com/casperandreassen/cryptocojo",
+    "linkToLiveDemo": "",
+    "linkToVideoDemo": "https://youtu.be/dXe-v0XUmVQ",
+    "pictureUrl": "https://i.ibb.co/BsGJhyS/logo-transparent.png"
+  }]
