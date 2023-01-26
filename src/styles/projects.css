@@ -1,0 +1,16 @@
+.projectsWrapper {
+  display: grid;
+  grid-template-columns: [spacerLeftStart] 20% [spacerLeftEnd] auto [colOneEnd] 20% [end];
+  grid-template-rows: [spacingStart] 10% [spacingEnd] auto [rowOneEnd] auto [rowTwoEnd] 10% [end];
+}
+.projectsDescription {
+  grid-column: 2;
+  grid-row: 2;
+}
+.projectsGrid {
+  grid-column: 2;
+  grid-row: 3;
+  background-color: lightgray;
+  height: auto;
+  width: auto;
+}
