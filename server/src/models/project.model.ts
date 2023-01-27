@@ -11,6 +11,7 @@ type ProjectDocument = Document & {
   linkToLiveDemo: string | undefined;
   linkToVideoDemo: string;
   pictureUrl: string;
+  techUsed: string[];
 };
 
 type ProjectInput = {
@@ -24,6 +25,7 @@ type ProjectInput = {
   linkToLiveDemo: ProjectDocument['linkToLiveDemo'];
   linkToVideoDemo: ProjectDocument['linkToVideoDemo'];
   pictureUrl: ProjectDocument['pictureUrl'];
+  techUsed: ProjectDocument['techUsed'];
 };
 
 const projectSchema = new Schema(
@@ -75,6 +77,11 @@ const projectSchema = new Schema(
     },
     pictureUrl: {
       type: Schema.Types.String,
+      required: true,
+      unique: true,
+    },
+    techUsed: {
+      type: Schema.Types.Array,
       required: true,
       unique: true,
     },

@@ -17,3 +17,20 @@
   row-gap: 4%;
   justify-content: space-evenly;
 }
+
+@media only screen and (max-width: 991px) {
+  .projectsWrapper {
+      display: grid;
+      grid-template-columns: [spacerLeftStart] 10% [spacerLeftEnd] auto [colOneEnd] 10% [end];
+      grid-template-rows: [spacingStart] 10% [spacingEnd] auto [rowOneEnd] auto [rowTwoEnd] 10% [end];
+  }
+}
+
+
+@media only screen and (max-width: 450px) {
+  .projectsWrapper {
+      display: grid;
+      grid-template-columns: [spacerLeftStart] 5% [spacerLeftEnd] auto [colOneEnd] 5% [end];
+      grid-template-rows: [spacingStart] 10% [spacingEnd] auto [rowOneEnd] auto [rowTwoEnd] 10% [end];
+  }
+}

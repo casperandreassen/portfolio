@@ -16,6 +16,7 @@ export interface Project {
   linkToLiveDemo: string | undefined;
   linkToVideoDemo: string;
   pictureUrl: string;
+  techUsed: string[];
 }
 
 /* Image needs to be 500x500 */
