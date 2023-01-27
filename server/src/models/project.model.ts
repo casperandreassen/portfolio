@@ -38,52 +38,52 @@ const projectSchema = new Schema(
     projectName: {
       type: Schema.Types.String,
       required: true,
-      unique: true,
+      unique: false,
     },
     projectShortDescription: {
       type: Schema.Types.String,
       required: true,
-      unique: true,
+      unique: false,
     },
     projectDescription: {
       type: Schema.Types.String,
       required: true,
-      unique: true,
+      unique: false,
     },
     projectAuthor: {
       type: Schema.Types.String,
       required: true,
-      unique: true,
+      unique: false,
     },
     createdDate: {
       type: Schema.Types.Date,
       required: true,
-      unique: true,
+      unique: false,
     },
     linkToRepo: {
       type: Schema.Types.String,
       required: true,
-      unique: true,
+      unique: false,
     },
     linkToLiveDemo: {
       type: Schema.Types.String,
       required: true,
-      unique: true,
+      unique: false,
     },
     linkToVideoDemo: {
       type: Schema.Types.String,
       required: true,
-      unique: true,
+      unique: false,
     },
     pictureUrl: {
       type: Schema.Types.String,
       required: true,
-      unique: true,
+      unique: false,
     },
     techUsed: {
       type: Schema.Types.Array,
       required: true,
-      unique: true,
+      unique: false,
     },
   },
   {

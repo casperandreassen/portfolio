@@ -59,9 +59,7 @@ const ProjectPage = () => {
           })}
         </div>
       </div>
-      <div className="projectDescription">
-        <p>{project?.projectDescription}</p>
-      </div>
+      <div className="projectDescription">{project?.projectDescription}</div>
     </div>
   );
 };

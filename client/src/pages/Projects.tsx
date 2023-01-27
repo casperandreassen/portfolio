@@ -54,7 +54,6 @@ const Projects = () => {
               key={String(project.projectId)}
               className="text-center"
               style={{ width: '17rem' }}>
-              <Card.Img variant="top" src={project.pictureUrl} />
               <Card.Body>
                 <Card.Title>{project.projectName}</Card.Title>
                 <Card.Text>{project.projectShortDescription}</Card.Text>

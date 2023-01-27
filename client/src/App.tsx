@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Main from './pages/Main';
 import Projects from './pages/Projects';
 import ProjectPage from './pages/ProjectPage';
+import Contact from './pages/Contact';
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Route path="/" element={<Main />}>
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:projectId" element={<ProjectPage />} />
-        <Route path="/contact"></Route>
+        <Route path="/contact" element={<Contact />}></Route>
       </Route>
     </Routes>
   );

@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { connectToDatabase } from './databaseConnection';
 import { projectRouter } from './routes/project.route';
+import { contactRouter } from './routes/contact.route';
 
 dotenv.config();
 
@@ -14,6 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/api/v1/', projectRouter());
+
+app.use('/api/v1/email', contactRouter());
 
 app.listen(PORT, async () => {
   await connectToDatabase();
