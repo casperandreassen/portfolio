@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import { connectToDatabase } from './databaseConnection';
 import { projectRouter } from './routes/project.route';
 import { contactRouter } from './routes/contact.route';
-
+import Logger from './utils/logger';
 dotenv.config();
 
 const HOST = process.env.HOST || 'http://localhost';
@@ -13,13 +13,11 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use('/api/v1/', projectRouter());
 
 app.use('/api/v1/email', contactRouter());
 
 app.listen(PORT, async () => {
   await connectToDatabase();
-
-  console.log(`Application started on URL ${HOST}:${PORT} 🎉`);
+  Logger.info(`Application started on URL ${HOST}:${PORT} 🎉`);
 });

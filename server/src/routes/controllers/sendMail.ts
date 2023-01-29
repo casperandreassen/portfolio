@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import nodemailer from 'nodemailer';
+import Logger from '../../utils/logger';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const sendMail = async (req: Request, res: Response) => {
-
   const message = {
     from: 'server@andreassen.dev',
     to: 'c@andreassen.dev',
@@ -18,21 +18,18 @@ const sendMail = async (req: Request, res: Response) => {
     secure: false,
     auth: {
       user: 'c.salminen@icloud.com',
-      pass: 'zxaw-bssf-uerr-dzto',
+      // TODO REMOVE KEY WHEN PUSHING TO GITHUB
+      pass: 'wooz-jtto-jrff-vka',
     },
-  });
-
-  transporter.verify(function (error, success) {
-    if (error) {
-      return res.status(503);
-    }
   });
 
   transporter.sendMail(message, (error, info) => {
     if (error) {
-      return res.status(503);
+      Logger.error(`Mail request failed to: ${req.query.fromEmail} with title: ${req.query.title} and body: ${req.query.body}`);
+      return res.status(503).json();
     }
-    return res.status(201);
+    Logger.info(`Email sent to owner from ${req.query.fromEmail}`);
+    return res.status(201).json();
   });
 };
 
