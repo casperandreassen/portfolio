@@ -17,13 +17,12 @@ const sendMail = async (req: Request, res: Response) => {
     port: 587,
     secure: false,
     auth: {
-      user: 'c.salminen@icloud.com',
-      // TODO REMOVE KEY WHEN PUSHING TO GITHUB
-      pass: 'wooz-jtto-jrff-vka',
+      user: process.env.EMAIL_LOGIN,
+      pass: process.env.ICLOUD_AUTH_KEY,
     },
   });
 
-  transporter.sendMail(message, (error, info) => {
+  transporter.sendMail(message, (error) => {
     if (error) {
       Logger.error(`Mail request failed to: ${req.query.fromEmail} with title: ${req.query.title} and body: ${req.query.body}`);
       return res.status(503).json();

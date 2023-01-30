@@ -4,6 +4,7 @@ import { connectToDatabase } from './databaseConnection';
 import { projectRouter } from './routes/project.route';
 import { contactRouter } from './routes/contact.route';
 import Logger from './utils/logger';
+import { authRouter } from './routes/auth.route';
 dotenv.config();
 
 const HOST = process.env.HOST || 'http://localhost';
@@ -13,9 +14,9 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/api/v1/', projectRouter());
-
+app.use('/api/v1/content', projectRouter());
 app.use('/api/v1/email', contactRouter());
+app.use('/api/v1/auth', authRouter());
 
 app.listen(PORT, async () => {
   await connectToDatabase();

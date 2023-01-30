@@ -17,7 +17,7 @@ const ProjectPage = () => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     axios
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      .get(`http://localhost:4500/api/v1/project/${params.projectId}`)
+      .get(`http://localhost:4500/api/v1/content/getProject/${params.projectId}`)
       .then((response: AxiosResponse) => {
         console.log(response);
         setProject(response.data.data);

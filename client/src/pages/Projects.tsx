@@ -27,10 +27,12 @@ const Projects = () => {
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    axios.get(`http://localhost:4500/api/v1/projects`).then((response: AxiosResponse) => {
-      console.log(response);
-      setProjects(response.data.data);
-    });
+    axios
+      .get(`http://localhost:4500/api/v1/content/getProjects`)
+      .then((response: AxiosResponse) => {
+        console.log(response);
+        setProjects(response.data.data);
+      });
   }, []);
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
