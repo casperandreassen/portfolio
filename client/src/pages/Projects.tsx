@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios, { type AxiosResponse } from 'axios';
+import ProjectCard from '../components/ProjectCard';
+import '../styles/projectPage.css'
 
 export interface Project {
   projectId: number;
@@ -37,7 +39,13 @@ const Projects = () => {
   };
 
   return (
-    <></>
+    <div className="projectPageWrapper">
+      <div className="projectListContainer">
+      {projects.map((project: Project) => {
+      return <ProjectCard project={project} />
+    })}
+      </div>
+    </div>
   );
 };
 
