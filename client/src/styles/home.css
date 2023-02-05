@@ -1,0 +1,115 @@
+.homeWrapper {
+    height: 100%;
+    display: grid;
+    grid-template-columns: [first] 15vw [line3] auto [col4-start] 15vw [end];
+    grid-template-rows: [row1-start] 2vh [row1-end] min-content [third-line] min-content [last-line] min-content [line-five] 2vh [end];
+}
+
+.profilePicture {
+    border-radius: 10px;
+    float: right;
+    height: 200px;
+    margin: 10px;
+    shape-outside:element();
+}
+
+@media only screen and (max-width: 640px) {
+    .profilePicture {
+        height: 150px;
+    }
+
+    .homeWrapper {
+        grid-template-columns: [first] 5vw [line3] auto [col4-start] 5vw [end];
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .profilePicture {
+        height: 250px;
+    }
+
+    .homeWrapper {
+        grid-template-columns: [first] 20vw [line3] auto [col4-start] 20vw [end];
+    }
+}
+
+.bio {
+    grid-column: 2;
+    grid-row: 2;
+    height: min-content;
+}
+
+h1 {
+    margin: 0;
+}
+
+
+.bio  > p {
+    margin: 0;
+}
+
+.education {
+    grid-column: 2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 10px;
+}
+
+
+.educationContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+    background-color: var(--background-accent-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.institutionYear {
+    margin: 0;
+    width: 80px;
+}
+
+.institutionYear > p {
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 17pt;
+}
+
+.institution {
+    font-size: 22pt;
+    line-height: 20pt;
+}
+
+.educationDivider {
+    background-color: var(--accent-color);
+    display: block;
+    height: 45px;
+    width: 2px;
+}
+
+.techStackWrapper {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.techStackRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+.techItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.techItem > p {
+    margin: 0;
+    text-align: center;
+    font-size: 10pt;
+}

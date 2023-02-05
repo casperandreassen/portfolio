@@ -9,7 +9,7 @@ import useWindowDimensions from '../hooks/useWindowDementions';
 const Main = () => {
   const { height, width } = useWindowDimensions();
   return (
-      <div style={{display: "flex", flexDirection: "column",justifyContent: "space-between", height: '100%'}}>
+      <div style={{display: "flex", flexDirection: "column",justifyContent: "space-between", minHeight: "100%"}}>
         {width < 640 ? <NavBarMobile /> : <NavBar />}
           <Outlet />
         <Footer />
