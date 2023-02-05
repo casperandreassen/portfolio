@@ -4,13 +4,11 @@ import { useParams } from 'react-router-dom';
 import { type Project } from './Projects';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
-import '../styles/project.css';
 import ContentPill from '../components/ContentPill';
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const ProjectPage = () => {
   const params = useParams();
-  console.log(params);
   const [project, setProject] = useState<Project>();
 
   useEffect(() => {
@@ -35,7 +33,6 @@ const ProjectPage = () => {
               target="_blank"
               rel="noreferrer"
               style={{ textDecoration: 'none', color: 'inherit' }}>
-              <FontAwesomeIcon icon={brands('github')} size="3x" />
             </a>
             <p>Repository</p>
           </div>
@@ -45,7 +42,6 @@ const ProjectPage = () => {
               target="_blank"
               rel="noreferrer"
               style={{ textDecoration: 'none', color: 'inherit' }}>
-              <FontAwesomeIcon icon={brands('youtube')} size="3x" />
             </a>
             <p>Demo</p>
           </div>

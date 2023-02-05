@@ -1,0 +1,44 @@
+.desktopNavbar {
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--background-accent-color);
+}
+
+.navLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    column-gap: 40px;
+    margin-left: 40px;
+}
+
+.navLinkItem > a {
+    padding: 0;
+}
+
+.navLinkItem {
+    transition: border-bottom 0.3s ease-out 30ms;
+}
+
+.navLinkItem:hover {
+    cursor: pointer;
+}
+
+
+.selectedNavLink {
+    border-bottom: 5px solid var(--accent-color);
+}
+
+.unSelectedNavLink {
+    border-bottom: 5px solid var(--background-accent-color);
+}
+
+.unSelectedNavLink:hover {
+    border-bottom: 5px solid var(--accent-color);
+}
+

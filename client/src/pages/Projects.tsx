@@ -1,6 +1,3 @@
-import '../styles/projects.css';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios, { type AxiosResponse } from 'axios';
@@ -41,37 +38,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="projectsWrapper">
-      <div className="projectsDescription">
-        <h1>Projects</h1>
-        <p>
-          Below you can find some of my projects! Some are large fullstack applications made with
-          various technologies. Some are made alone by me. Others are made in groups. Take a look!
-        </p>
-      </div>
-      <div className="projectsGrid">
-        {projects?.map((project: Project) => {
-          return (
-            <Card
-              key={String(project.projectId)}
-              className="text-center"
-              style={{ width: '17rem' }}>
-              <Card.Body>
-                <Card.Title>{project.projectName}</Card.Title>
-                <Card.Text>{project.projectShortDescription}</Card.Text>
-                <Button
-                  variant="primary"
-                  onClick={() => {
-                    openProject(project.projectId);
-                  }}>
-                  More info
-                </Button>
-              </Card.Body>
-            </Card>
-          );
-        })}
-      </div>
-    </div>
+    <></>
   );
 };
 
