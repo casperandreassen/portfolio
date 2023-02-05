@@ -27,7 +27,6 @@ const Projects = () => {
     axios
       .get(`http://localhost:4500/api/v1/content/getProjects`)
       .then((response: AxiosResponse) => {
-        console.log(response);
         setProjects(response.data.data);
       });
   }, []);

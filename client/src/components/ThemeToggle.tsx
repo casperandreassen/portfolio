@@ -1,5 +1,7 @@
 import "../styles/darkMode.css";
 import { ChangeEventHandler } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 
 // 1
@@ -43,7 +45,7 @@ const setDark = () => {
 const ThemeToggle = () => {
   return (
     <div className="toggle-theme-wrapper">
-      <span>☀️</span>
+      <FontAwesomeIcon size="xl" icon={solid('sun')}/>
       <label className="toggle-theme" htmlFor="checkbox">
         <input
           type="checkbox"
@@ -53,7 +55,7 @@ const ThemeToggle = () => {
         />
         <div className="slider round"></div>
       </label>
-      <span>🌒</span>
+      <FontAwesomeIcon size="xl" icon={solid('moon')}/>
     </div>
   );
 };

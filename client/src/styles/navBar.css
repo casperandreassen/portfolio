@@ -1,6 +1,6 @@
 .desktopNavbar {
     width: 100vw;
-    height: 5vh;
+    min-height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -17,28 +17,24 @@
     margin-left: 40px;
 }
 
-.navLinkItem > a {
-    padding: 0;
-}
-
 .navLinkItem {
-    transition: border-bottom 0.3s ease-out 30ms;
+    color: var(--font-color);
+    text-decoration: none;
+    line-height: 14pt;
+    transition: border-bottom 0.2s ease-in-out 30ms;
+    border-bottom: 3px solid transparent;
 }
 
 .navLinkItem:hover {
     cursor: pointer;
+    box-sizing: border-box;
+    border-bottom: 3px solid var(--accent-color);
 }
 
 
 .selectedNavLink {
-    border-bottom: 5px solid var(--accent-color);
+    box-sizing: border-box;
+    border-bottom: 3px solid var(--accent-color);
 }
 
-.unSelectedNavLink {
-    border-bottom: 5px solid var(--background-accent-color);
-}
-
-.unSelectedNavLink:hover {
-    border-bottom: 5px solid var(--accent-color);
-}
 

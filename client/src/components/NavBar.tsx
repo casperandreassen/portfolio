@@ -1,26 +1,17 @@
 import ThemeToggle from "./ThemeToggle";
 import "../styles/navBar.css"
-import { LinkHTMLAttributes, useState } from "react";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
-
-    const [selectedLink, setSelectedLink] = useState('HOME');
-
-    const handleLinkChange = (event: LinkHTMLAttributes<HTMLLinkElement>) => {
-    }
+    const location = useLocation();
 
     return (
         <div className="desktopNavbar">
             <div className="navLinks">
-                <div className="navLinkItem selectedNavLink">
-                    <a onClick={handleLinkChange}>HOME</a>
-                </div>
-                <div className="navLinkItem unSelectedNavLink">
-                    <a>PROJECTS</a>
-                </div>
-                <div className="navLinkItem unSelectedNavLink">
-                    <a>CONTACT</a>
-                </div>
+                    <Link className={`navLinkItem ${String(location.pathname) === "/" ? "selectedNavLink" : "unSelectedNavLink"}`} to="/">HOME</Link>
+                    <Link className={`navLinkItem ${String(location.pathname) === "/projects" ? "selectedNavLink" : "unSelectedNavLink"}`} to="/projects">PROJECTS</Link>
+                    <Link className={`navLinkItem ${String(location.pathname) === "/contact" ? "selectedNavLink" : "unSelectedNavLink"}`} to="/contact">CONTACT</Link>
             </div>
             <ThemeToggle />
         </div>

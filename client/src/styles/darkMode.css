@@ -23,12 +23,15 @@
     margin: 0;
     font-family: 'Poppins', sans-serif;
   }
+
 /* Custom Dark Mode Toggle Element */
 .toggle-theme-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
+    margin-right: 40px;
+    margin-left: 20px;
   }
 
   .toggle-theme-wrapper span {
@@ -38,8 +41,8 @@
   .toggle-theme {
     position: relative;
     display: inline-block;
-    height: 34px;
-    width: 60px;
+    height: 27px;
+    width: 55px;
   }
 
   .toggle-theme input {
@@ -47,7 +50,7 @@
   }
 
   .slider {
-    background-color: #ccc;
+    background-color: #323232;
     position: absolute;
     cursor: pointer;
     bottom: 0;
@@ -59,13 +62,13 @@
 
   .slider:before {
     background-color: #fff;
-    bottom: 4px;
+    bottom: 3px;
     content: "";
-    height: 26px;
+    height: 21px;
     left: 4px;
     position: absolute;
     transition: 0.4s;
-    width: 26px;
+    width: 21px;
   }
 
   input:checked + .slider:before {
@@ -73,7 +76,7 @@
   }
 
   input:checked + .slider {
-    background-color: cornflowerblue;
+    background-color: var(--accent-color);
   }
 
   .slider.round {

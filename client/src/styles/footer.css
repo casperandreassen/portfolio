@@ -1,0 +1,12 @@
+.footerContainer {
+    background-color: var(--background-accent-color);
+    width: 100vw;
+    height: 60px;
+    justify-content: center;
+}
+
+.footerContainer > p {
+    margin: auto;
+    line-height: 60px;
+    text-align: center;
+}
