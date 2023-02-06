@@ -33,16 +33,16 @@ const Projects = () => {
       });
   }, []);
 
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const openProject = (projectId: number) => {
-    navigate('/projects/' + String(projectId));
-  };
-
   return (
     <div className="projectPageWrapper">
       <div className="projectListContainer">
-      {projects.map((project: Project) => {
-      return <ProjectCard project={project} />
+      {projects.map((project: Project, index: number) => {
+      return (
+        <div key={project.projectId}>
+        <ProjectCard project={project} />
+        {(index - (projects.length - 1)) !== 0 ? <div className="itemDivider"></div> : <></>}
+        </div>
+      )
     })}
       </div>
     </div>

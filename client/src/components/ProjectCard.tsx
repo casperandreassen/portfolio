@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Project } from "../pages/Projects";
+import { useEffect } from 'react';
 
 interface ProjectCardProps {
     project: Project;
@@ -10,20 +11,20 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
     const navigate = useNavigate();
     const [image, setImage] = useState<any>();
-      // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const openProject = (projectId: number) => {
+
+
+    const openProject = (projectId: number) => {
     navigate('/projects/' + String(projectId));
   };
-  const storedTheme = localStorage.getItem("theme");
 
-  const getCoverImage = () => {
-    var data = JSON.stringify({
-      imgId: 1,
-      mode: storedTheme,
+  useEffect(() => {
+    const data = JSON.stringify({
+      imgId: "cover",
+      mode: localStorage.getItem("theme"),
       projectId: project.projectId
     });
 
-    var config = {
+    const config = {
       method: 'post',
       url: 'http://localhost:4500/api/v1/content/img',
       headers: {
@@ -39,8 +40,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
     .catch(function (error) {
       console.log(error);
     });
-  }
-  getCoverImage();
+
+  }, [project.projectId])
+
 
     return (
         <div className="projectCardWrapper">
@@ -49,7 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
              <div className="projectCardImageContainer">
                 <img className="projectCardImage" src={`data:image/png;base64,${image}`} alt="coverPicture"></img>
              </div>
-            <button>Learn more</button>
+            <button className="button" onClick={() => navigate(`/projects/${project.projectId}`)}>Learn more</button>
         </div>
     )
 }

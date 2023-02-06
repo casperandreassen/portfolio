@@ -13,3 +13,19 @@ body {
     margin: 0;
     height: 100%;
 }
+
+.button {
+    border: 1px solid var(--accent-color);
+    color: var(--font-color);
+    background-color: var(--background-accent-color);
+    padding: 0.3em 2em;
+    font-size: 15pt;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: 400ms ease all;
+}
+
+.button:hover {
+    background-color: var(--accent-color);
+    transition: 400ms ease all;
+}

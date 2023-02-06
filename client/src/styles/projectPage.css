@@ -1,8 +1,30 @@
 .projectPageWrapper {
     height: 100%;
     display: grid;
-    grid-template-columns: [first] 15vw [line3] auto [col4-start] 15vw [end];
+    grid-template-columns: [first] 20vw [line3] auto [col4-start] 20vw [end];
     grid-template-rows: [row1-start] 2vh [row1-end] auto [third-line]  2vh [end];
+}
+
+.itemDivider {
+    background-color: var(--accent-color);
+    height: 1px;
+    width: 96%;
+    position: relative;
+    top: 10px;
+    margin: auto;
+    transition: 300ms ease;
+}
+
+@media only screen and (max-width: 850px) {
+    .projectPageWrapper {
+        grid-template-columns: [first] 13vw [line3] auto [col4-start] 13vw [end];
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .projectPageWrapper {
+        grid-template-columns: [first] 5vw [line3] auto [col4-start] 5vw [end];
+    }
 }
 
 .projectListContainer {
@@ -22,6 +44,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+}
+
+.projectCardWrapper > h1, p {
+    margin: 0;
 }
 
 .projectCardImage {
@@ -31,4 +58,5 @@
 .projectCardImageContainer {
     max-width: 95%;
     max-height: 50vh;
+    padding: 10px 0
 }
