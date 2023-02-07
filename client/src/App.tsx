@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import CreateProject from './pages/CreateProject';
 import Home from './pages/Home';
 import Main from './pages/Main';
 import ProjectPage from './pages/ProjectPage';
@@ -15,6 +16,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:projectId" element={<ProjectPage />} />
           </Route>
+          <Route path="/admin/createProject" element={<CreateProject />}/>
         </Routes>
     </>
   )

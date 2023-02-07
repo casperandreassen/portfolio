@@ -4,7 +4,7 @@
     --background-color: #eee;
     --background-accent-color: #E1E5EA;
     --accent-color: #28DF99;
-    --invert-color: #212121;
+    --invert-color: rgba(0, 0, 0, 0.19);
   }
 
   /* 2 */
@@ -13,7 +13,7 @@
     --background-color: #232323;
     --background-accent-color: #323232;
     --accent-color: #FF5959;
-    --invert-color: #FFFFFF;
+    --invert-color: #232323;
   }
 
   /* 3 */

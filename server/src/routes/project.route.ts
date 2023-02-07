@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { authRouter } from './auth.route';
+import { createProject } from './controllers/createProject';
 import { getImage } from './controllers/getImage';
 import { getProject } from './controllers/getProject';
 import { getProjects } from './controllers/getProjects';
@@ -9,9 +10,11 @@ const projectRouter = () => {
 
   router.get('/getProjects', getProjects);
 
-  router.get('/getProject/:projectId', getProject);
+  router.get('/getProject/:id', getProject);
 
-  router.post('/img', getImage);
+  router.post('/createProject', createProject);
+
+  router.get('/img/:imgName', getImage);
 
   return router;
 };

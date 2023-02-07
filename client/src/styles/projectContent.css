@@ -1,0 +1,23 @@
+.projectPageWrapper {
+    height: 100%;
+    display: grid;
+    grid-template-columns: [first] 20vw [line3] auto [col4-start] 20vw [end];
+    grid-template-rows: [row1-start] 2vh [row1-end] auto [third-line]  2vh [end];
+}
+
+@media only screen and (max-width: 850px) {
+    .projectPageWrapper {
+        grid-template-columns: [first] 13vw [line3] auto [col4-start] 13vw [end];
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .projectPageWrapper {
+        grid-template-columns: [first] 5vw [line3] auto [col4-start] 5vw [end];
+    }
+}
+
+.articleContainer {
+    grid-column: 2;
+    grid-row: 2;
+}

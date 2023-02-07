@@ -3,20 +3,7 @@ import { useEffect, useState } from 'react';
 import axios, { type AxiosResponse } from 'axios';
 import ProjectCard from '../components/ProjectCard';
 import '../styles/projectPage.css'
-
-export interface Project {
-  projectId: number;
-  projectName: string;
-  projectShortDescription: string;
-  projectDescription: string;
-  projectAuthor: string;
-  createdDate: Date;
-  linkToRepo: string;
-  linkToLiveDemo: string | undefined;
-  linkToVideoDemo: string;
-  pictureUrl: string;
-  techUsed: string[];
-}
+import { Project } from '../types/types';
 
 /* Image needs to be 500x500 */
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -27,7 +14,7 @@ const Projects = () => {
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     axios
-      .get(`http://localhost:4500/api/v1/content/getProjects`)
+      .get('http://localhost:4500/api/v1/content/getProjects')
       .then((response: AxiosResponse) => {
         setProjects(response.data.data);
       });
@@ -38,7 +25,7 @@ const Projects = () => {
       <div className="projectListContainer">
       {projects.map((project: Project, index: number) => {
       return (
-        <div key={project.projectId}>
+        <div key={project._id}>
         <ProjectCard project={project} />
         {(index - (projects.length - 1)) !== 0 ? <div className="itemDivider"></div> : <></>}
         </div>

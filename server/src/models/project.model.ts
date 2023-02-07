@@ -1,51 +1,31 @@
 import mongoose, { Schema, Model, Document } from 'mongoose';
 
 type ProjectDocument = Document & {
-  projectId: string;
   projectName: string;
   projectShortDescription: string;
-  projectDescription: string;
   projectAuthor: string;
   createdDate: Date;
-  linkToRepo: string;
-  linkToLiveDemo: string | undefined;
-  linkToVideoDemo: string;
-  pictureUrl: string;
-  techUsed: string[];
+  coverUrl: string;
+  documentBody: string;
 };
 
 type ProjectInput = {
-  projectId: ProjectDocument['projectId'];
   projectName: ProjectDocument['projectName'];
   projectShortDescription: ProjectDocument['projectShortDescription'];
-  projectDescription: ProjectDocument['projectDescription'];
   projectAuthor: ProjectDocument['projectAuthor'];
   createdDate: ProjectDocument['createdDate'];
-  linkToRepo: ProjectDocument['linkToRepo'];
-  linkToLiveDemo: ProjectDocument['linkToLiveDemo'];
-  linkToVideoDemo: ProjectDocument['linkToVideoDemo'];
-  pictureUrl: ProjectDocument['pictureUrl'];
-  techUsed: ProjectDocument['techUsed'];
+  coverUrl: ProjectDocument['coverUrl'];
+  documentBody: ProjectDocument['documentBody'];
 };
 
 const projectSchema = new Schema(
   {
-    projectId: {
+    projectName: {
       type: Schema.Types.String,
       required: true,
       unique: true,
     },
-    projectName: {
-      type: Schema.Types.String,
-      required: true,
-      unique: false,
-    },
     projectShortDescription: {
-      type: Schema.Types.String,
-      required: true,
-      unique: false,
-    },
-    projectDescription: {
       type: Schema.Types.String,
       required: true,
       unique: false,
@@ -60,28 +40,13 @@ const projectSchema = new Schema(
       required: true,
       unique: false,
     },
-    linkToRepo: {
+    coverUrl: {
       type: Schema.Types.String,
       required: true,
       unique: false,
     },
-    linkToLiveDemo: {
+    documentBody: {
       type: Schema.Types.String,
-      required: true,
-      unique: false,
-    },
-    linkToVideoDemo: {
-      type: Schema.Types.String,
-      required: true,
-      unique: false,
-    },
-    pictureUrl: {
-      type: Schema.Types.String,
-      required: true,
-      unique: false,
-    },
-    techUsed: {
-      type: Schema.Types.Array,
       required: true,
       unique: false,
     },
