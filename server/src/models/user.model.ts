@@ -6,6 +6,7 @@ type UserDocument = Document & {
   email: string;
   password: string;
   token: string;
+  role: number;
 };
 
 type userInput = {
@@ -14,6 +15,7 @@ type userInput = {
   email: UserDocument['email'];
   password: UserDocument['password'];
   token: UserDocument['token'];
+  role: UserDocument['role'];
 };
 
 const userSchema = new Schema(
@@ -41,6 +43,11 @@ const userSchema = new Schema(
     token: {
       type: Schema.Types.String,
       required: false,
+      unique: false,
+    },
+    role: {
+      type: Schema.Types.Number,
+      required: true,
       unique: false,
     },
   },

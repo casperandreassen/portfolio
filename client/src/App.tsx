@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Main from './pages/Main';
 import ProjectPage from './pages/ProjectPage';
 import Projects from './pages/Projects';
+import { userContext } from './context/userContext';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:projectId" element={<ProjectPage />} />
           </Route>
+          <userContext.Provider
           <Route path="/admin/createProject" element={<CreateProject />}/>
         </Routes>
     </>

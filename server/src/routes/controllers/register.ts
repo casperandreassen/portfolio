@@ -6,9 +6,9 @@ import Logger from '../../utils/logger';
 
 const registerController = async (req: Request, res: Response) => {
   try {
-    const { authToken, email, firstName, lastName, password } = req.body;
+    const { authToken, email, firstName, lastName, password, role } = req.body;
 
-    if (!(email && password && firstName && lastName)) {
+    if (!(email && password && firstName && lastName && role)) {
       res.status(400).send('All input is required');
     }
 
@@ -29,11 +29,10 @@ const registerController = async (req: Request, res: Response) => {
       lastName,
       email: email.toLowerCase(),
       password: encryptedPassword,
+      role,
     });
 
     const token = jwt.sign({ userId: user._id, email }, process.env.JWT_TOKEN, { expiresIn: '2h' });
-
-    console.log(token);
 
     user.token = token;
 

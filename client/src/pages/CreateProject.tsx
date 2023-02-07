@@ -1,8 +1,7 @@
 import { Editor } from 'react-draft-wysiwyg'
-import { EditorState } from 'draft-js'
+import { EditorState, convertToRaw } from 'draft-js'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import '../styles/createProject.css'
-import { convertToRaw } from 'draft-js'
 import draftToHtml from 'draftjs-to-html'
 import { useState } from 'react'
 
