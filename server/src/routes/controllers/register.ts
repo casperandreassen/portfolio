@@ -32,9 +32,7 @@ const registerController = async (req: Request, res: Response) => {
       role,
     });
 
-    const token = jwt.sign({ userId: user._id, email }, process.env.JWT_TOKEN, { expiresIn: '2h' });
-
-    user.token = token;
+    const token = jwt.sign({ userId: user._id, email }, process.env.JWT_TOKEN, { expiresIn: '365d' });
 
     res.status(201).json(user);
   } catch (error) {

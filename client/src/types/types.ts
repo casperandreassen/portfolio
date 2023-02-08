@@ -8,10 +8,12 @@ export type Project = {
     documentBody: string;
 }
 
+
+
 export type User = {
     _id: string;
+    email: string;
     firstName: string;
     lastName: string;
-    email: string;
-    token: string;
+    role: number,
 }
