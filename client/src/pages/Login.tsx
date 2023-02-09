@@ -1,45 +1,39 @@
-import axios, { AxiosResponse } from 'axios'
-import { useEffect, useState } from 'react'
+import axios, { AxiosError, AxiosResponse } from 'axios'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useRecoilState } from 'recoil'
-import { userState } from '../recoil/atoms'
+import { useSetRecoilState } from 'recoil'
+import { isLoggedIn, userState } from '../recoil/atoms'
 import { User } from '../types/types'
 
 const Login = () => {
   const [email, setEmail] = useState<string>()
   const [password, setPassword] = useState<string>()
-  const [user, setUser] = useRecoilState(userState)
+  const setUser = useSetRecoilState(userState)
+  const setLoggedIn = useSetRecoilState(isLoggedIn)
   const navigate = useNavigate()
-
-  useEffect(() => {
-    axios({
-      method: 'post',
-      url: 'http://localhost:4500/api/v1/auth/verify',
-      withCredentials: true,
-    }).then((response: AxiosResponse) => {
-      console.log(response)
-      if (response.status === 200) {
-        setUser(response.data as User)
-        navigate('/manage/createProject')
-      }
-    })
-  }, [])
 
   const handleLogin = () => {
     axios({
-      method: 'post',
+      method: 'POST',
       url: 'http://localhost:4500/api/v1/auth/login',
       withCredentials: true,
       data: {
         email: email,
         password: password,
       },
-    }).then((response: AxiosResponse) => {
-      if (response.status == 200) {
-        setUser(response.data as User)
-        navigate('/manage/createProject')
-      }
     })
+      .then((response: AxiosResponse) => {
+        if (response.status == 200) {
+          console.log(response.data)
+          setUser(response.data as User)
+          setLoggedIn('true')
+          localStorage.setItem('isLoggedIn', 'true')
+          navigate('/manage')
+        }
+      })
+      .catch((error: AxiosError) => {
+        console.log(error)
+      })
   }
 
   return (

@@ -16,10 +16,10 @@ function App() {
           <Route path='/projects' element={<Projects />} />
           <Route path='/projects/:projectId' element={<ProjectPage />} />
         </Route>
-        <Route element={<PrivateRoutes />}>
-          <Route path='/manage/createProject' element={<CreateProject />} />
+        <Route path='/manage' element={<PrivateRoutes />}>
+          <Route path='/manage/projects' element={<CreateProject />} />
         </Route>
-        <Route path='/manage/login' element={<Login />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </>
   )

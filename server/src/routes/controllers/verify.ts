@@ -15,14 +15,16 @@ const verifyController = (req: Request, res: Response) => {
   if (token != undefined) {
     jwt.verify(token, process.env.JWT_TOKEN, async (err, decoded) => {
       if (err) {
-        res.status(401).send();
+        return res.sendStatus(401);
       } else {
         console.log(decoded);
         const user = await User.findOne({ _id: decoded.userId }, 'email firstName lastName role');
 
-        res.status(200).json(user);
+        return res.status(200).json(user);
       }
     });
+  } else {
+    res.sendStatus(401);
   }
 };
 

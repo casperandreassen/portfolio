@@ -1,11 +1,12 @@
-import { Navigate, Outlet } from 'react-router-dom'
-import { useRecoilState } from 'recoil'
-import { userState } from '../recoil/atoms'
+import { Navigate } from 'react-router-dom'
+import { useRecoilValue } from 'recoil'
+import Manage from '../pages/Manage'
+import { isLoggedIn } from '../recoil/atoms'
 
 const PrivateRoutes = () => {
-  const [user] = useRecoilState(userState)
+  const LoggedIn = useRecoilValue(isLoggedIn)
 
-  return user ? <Outlet /> : <Navigate to='/manage/login' />
+  return LoggedIn === 'true' ? <Manage /> : <Navigate to='/login' />
 }
 
 export default PrivateRoutes
