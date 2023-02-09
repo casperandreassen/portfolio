@@ -1,5 +1,4 @@
-import { Link, Outlet, useNavigate } from 'react-router-dom'
-import Button from '@mui/material/Button'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import '../styles/manage.css'
 import React, { useEffect } from 'react'
 import { useRecoilState, useSetRecoilState } from 'recoil'
@@ -7,8 +6,20 @@ import { isLoggedIn, userState } from '../recoil/atoms'
 import { User } from '../types/types'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-import { Avatar, Divider, IconButton, ListItemIcon, Menu, MenuItem } from '@mui/material'
-import { Logout, PersonAdd, Settings } from '@mui/icons-material'
+import { Avatar, IconButton, ListItemIcon, Menu, MenuItem } from '@mui/material'
+import { Logout } from '@mui/icons-material'
+
+const activeStyle = {
+  borderBottom: '2px solid #28DF99',
+  textDecoration: 'none',
+  color: 'black',
+}
+
+const deactiveStyle = {
+  borderBottom: '2px solid #E1E5EA',
+  textDecoration: 'none',
+  color: 'black',
+}
 
 const Manage = () => {
   const [user, setUser] = useRecoilState(userState)
@@ -16,6 +27,8 @@ const Manage = () => {
   const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
+  const location = useLocation()
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
   }
@@ -57,11 +70,21 @@ const Manage = () => {
   }
 
   return (
-    <>
+    <div className='manageApp'>
       <div className='manageHeader'>
-        <div>
-          <Link to='/manage/projects'>Manage projects</Link>
-          <Link to='/manage/assets'>Manage assets</Link>
+        <div className='navLinks'>
+          <Link
+            style={location.pathname.includes('/projects') ? activeStyle : deactiveStyle}
+            to='/manage/projects'
+          >
+            Projects
+          </Link>
+          <Link
+            style={location.pathname.includes('/assets') ? activeStyle : deactiveStyle}
+            to='/manage/assets'
+          >
+            Assets
+          </Link>
         </div>
         <div className='userDropdown'>
           <IconButton onClick={handleClick}>
@@ -114,7 +137,7 @@ const Manage = () => {
         </div>
       </div>
       <Outlet />
-    </>
+    </div>
   )
 }
 

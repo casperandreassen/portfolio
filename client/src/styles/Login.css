@@ -4,6 +4,7 @@
     grid-template-columns: [first] auto [line3] min-content [col4-start] auto [end];
     grid-template-rows: [row1-start] auto [row1-end] min-content [line-five] auto [end];
     background-color: #E1E5EA;
+    font-family: 'Roboto', sans-serif;
 }
 
 .loginContainer {

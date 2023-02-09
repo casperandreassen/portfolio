@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom'
 import { useRecoilValue } from 'recoil'
-import Manage from '../pages/Manage'
+import Manage from '../layouts/Manage'
 import { isLoggedIn } from '../recoil/atoms'
 
 const PrivateRoutes = () => {

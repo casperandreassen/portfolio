@@ -17,7 +17,6 @@ const verifyController = (req: Request, res: Response) => {
       if (err) {
         return res.sendStatus(401);
       } else {
-        console.log(decoded);
         const user = await User.findOne({ _id: decoded.userId }, 'email firstName lastName role');
 
         return res.status(200).json(user);

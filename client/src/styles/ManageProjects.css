@@ -1,0 +1,6 @@
+.manageProjectsWrapper {
+    height: calc(100% - 60px);
+    display: grid;
+    grid-template-columns: [first] auto [line3] min-content [col4-start] auto [end];
+    grid-template-rows: [row1-start] 2vh [row1-end] auto [row2-end] auto [row2-end] auto [end];
+}
