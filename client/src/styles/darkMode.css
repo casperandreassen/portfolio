@@ -17,7 +17,7 @@
   }
 
   /* 3 */
-  body {
+  .mainContainer {
     background-color: var(--background-color);
     color: var(--font-color);
     margin: 0;

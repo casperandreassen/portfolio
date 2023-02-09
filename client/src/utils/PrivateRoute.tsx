@@ -6,7 +6,7 @@ import { isLoggedIn } from '../recoil/atoms'
 const PrivateRoutes = () => {
   const LoggedIn = useRecoilValue(isLoggedIn)
 
-  return LoggedIn === 'true' ? <Manage /> : <Navigate to='/login' />
+  return LoggedIn ? <Manage /> : <Navigate to='/login' />
 }
 
 export default PrivateRoutes

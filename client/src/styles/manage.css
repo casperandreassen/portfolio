@@ -1,6 +1,5 @@
 .manageHeader {
-    background-color: var(--background-accent-color);
-    width: 100%;
+    background-color: #E1E5EA;
     height: 60px;
     display: flex;
     padding-left: 20px;
@@ -10,3 +9,5 @@
     align-items: center;
     column-gap: 15px;
 }
+
+

@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
-import { useRef } from 'react'
 import NavBarMobile from '../components/NavBarMobile'
 import useWindowDimensions from '../hooks/useWindowDementions'
 
@@ -16,6 +15,7 @@ const Main = () => {
         justifyContent: 'space-between',
         minHeight: '100%',
       }}
+      className='mainContainer'
     >
       {width < 640 ? <NavBarMobile /> : <NavBar />}
       <Outlet />
