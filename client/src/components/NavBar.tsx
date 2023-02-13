@@ -1,6 +1,5 @@
 import ThemeToggle from './ThemeToggle'
 import '../styles/navBar.css'
-import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const NavBar = () => {

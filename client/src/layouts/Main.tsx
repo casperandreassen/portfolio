@@ -6,7 +6,7 @@ import useWindowDimensions from '../hooks/useWindowDementions'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const Main = () => {
-  const { height, width } = useWindowDimensions()
+  const { width } = useWindowDimensions()
   return (
     <div
       style={{

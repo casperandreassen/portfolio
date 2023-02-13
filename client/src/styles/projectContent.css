@@ -1,7 +1,8 @@
 .projectPageWrapper {
     height: 100%;
+    width: 100vw;
     display: grid;
-    grid-template-columns: [first] 20vw [line3] auto [col4-start] 20vw [end];
+    grid-template-columns: [first] 30vw [line3] auto [col4-start] 30vw [end];
     grid-template-rows: [row1-start] 2vh [row1-end] auto [third-line]  2vh [end];
 }
 
@@ -20,4 +21,20 @@
 .articleContainer {
     grid-column: 2;
     grid-row: 2;
+    max-width: 100vw;
+}
+
+.articleContainer > p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.blogImage {
+    max-width: 90vw;
+    max-height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

@@ -1,19 +1,75 @@
-export type Project = {
-    _id: string;
-    projectName: string;
-    projectShortDescription: string;
-    projectAuthor: string;
-    createdDate: Date;
-    coverUrl: string;
-    documentBody: string;
+export interface Project {
+    id:         number;
+    attributes: Attributes;
+}
+
+export interface Attributes {
+    projectId:        string;
+    post:             string;
+    projectCreated:   Date;
+    projectName:      string;
+    createdAt:        Date;
+    updatedAt:        Date;
+    publishedAt:      Date;
+    shortDescription: string;
 }
 
 
+export interface ProjectCardType {
+    id:         number;
+    attributes: ProjectCardTypeAttributes;
+}
 
-export type User = {
-    _id: string;
-    email: string;
-    firstName: string;
-    lastName: string;
-    role: number,
+export interface ProjectCardTypeAttributes {
+    projectName:      string;
+    shortDescription: string;
+    projectID:        string;
+    cover:            Cover;
+}
+
+export interface Cover {
+    data: Data;
+}
+
+export interface Data {
+    id:         number;
+    attributes: DataAttributes;
+}
+
+export interface DataAttributes {
+    name:             string;
+    alternativeText:  null;
+    caption:          null;
+    width:            number;
+    height:           number;
+    formats:          Formats;
+    hash:             string;
+    ext:              string;
+    mime:             string;
+    size:             number;
+    url:              string;
+    previewURL:       null;
+    provider:         string;
+    providerMetadata: null;
+    createdAt:        Date;
+    updatedAt:        Date;
+}
+
+export interface Formats {
+    large:     Large;
+    small:     Large;
+    medium:    Large;
+    thumbnail: Large;
+}
+
+export interface Large {
+    ext:    string;
+    url:    string;
+    hash:   string;
+    mime:   string;
+    name:   string;
+    path:   null;
+    size:   number;
+    width:  number;
+    height: number;
 }
