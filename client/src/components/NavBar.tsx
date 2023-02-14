@@ -9,6 +9,7 @@ const NavBar = () => {
     <div className='desktopNavbar'>
       <div className='navLinks'>
         <Link
+          data-testid='navLinkHome'
           className={`navLinkItem ${
             String(location.pathname) === '/' ? 'selectedNavLink' : 'unSelectedNavLink'
           }`}
@@ -17,6 +18,7 @@ const NavBar = () => {
           HOME
         </Link>
         <Link
+          data-testid='navLinkProjects'
           className={`navLinkItem ${
             String(location.pathname).includes('/projects')
               ? 'selectedNavLink'
@@ -27,6 +29,7 @@ const NavBar = () => {
           PROJECTS
         </Link>
         <Link
+          data-testid='navLinkContact'
           className={`navLinkItem ${
             String(location.pathname) === '/contact' ? 'selectedNavLink' : 'unSelectedNavLink'
           }`}

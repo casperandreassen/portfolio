@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Main from './layouts/Main'
 import ProjectPage from './pages/ProjectPage'
 import Projects from './pages/Projects'
+import Contact from './pages/Contact'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/projects' element={<Projects />} />
           <Route path='/projects/:projectId' element={<ProjectPage />} />
+          <Route path='/contact' element={<Contact />} />
         </Route>
       </Routes>
     </>
