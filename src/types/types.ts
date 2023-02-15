@@ -6,12 +6,16 @@ export interface Project {
 export interface Attributes {
     projectId:        string;
     post:             string;
-    projectCreated:   Date;
+    projectCreated:   string;
+    gitRepo: string;
+    linkToDemo: string;
+    author: string;
     projectName:      string;
-    createdAt:        Date;
-    updatedAt:        Date;
-    publishedAt:      Date;
+    createdAt:        string;
+    updatedAt:        string;
+    publishedAt:      string;
     shortDescription: string;
+
 }
 
 

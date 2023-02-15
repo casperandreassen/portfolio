@@ -1,6 +1,6 @@
 .footerContainer {
     background-color: var(--background-accent-color);
-    width: 100vw;
+    max-width: 100vw;
     height: 60px;
     justify-content: center;
 }

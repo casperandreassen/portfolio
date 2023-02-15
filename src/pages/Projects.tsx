@@ -14,7 +14,7 @@ const Projects = () => {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'https://api.andreassen.dev/api/projects?fields[0]=projectName&fields[1]=shortDescription&fields[2]=projectId&populate[cover]=url',
+      url: 'http://localhost:1337/api/projects?fields[0]=projectName&fields[1]=shortDescription&fields[2]=projectId&populate[cover]=url',
     }).then((response: AxiosResponse) => {
       setProjects(response.data.data)
       console.log(response.data.data)

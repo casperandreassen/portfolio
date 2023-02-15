@@ -43,9 +43,6 @@
 }
 
 @media only screen and (max-width: 850px) {
-    .projectPageWrapper {
-        grid-template-columns: [first] 13vw [line3] auto [col4-start] 13vw [end];
-    }
     .projectCardImageContainer {
         max-height: 40vh;
     }
@@ -56,8 +53,3 @@
     }
 }
 
-@media only screen and (max-width: 640px) {
-    .projectPageWrapper {
-        grid-template-columns: [first] 5vw [line3] auto [col4-start] 5vw [end];
-    }
-}
