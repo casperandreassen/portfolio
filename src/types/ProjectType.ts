@@ -1,25 +1,38 @@
-export interface ProjectCardType {
-    id:         number;
-    attributes: ProjectCardTypeAttributes;
+export interface Project {
+    data: ProjectData;
+    meta: Meta;
 }
 
-export interface ProjectCardTypeAttributes {
-    projectName:      string;
-    shortDescription: string;
+export interface ProjectData {
+    id:         number;
+    attributes: PurpleAttributes;
+}
+
+export interface PurpleAttributes {
     projectID:        string;
+    post:             string;
+    projectCreated:   Date;
+    projectName:      string;
+    createdAt:        Date;
+    updatedAt:        Date;
+    publishedAt:      Date;
+    shortDescription: string;
+    gitRepo:          string;
+    linkToDemo:       null;
+    author:           string;
     cover:            Cover;
 }
 
 export interface Cover {
-    data: Data;
+    data: CoverData;
 }
 
-export interface Data {
+export interface CoverData {
     id:         number;
-    attributes: DataAttributes;
+    attributes: FluffyAttributes;
 }
 
-export interface DataAttributes {
+export interface FluffyAttributes {
     name:             string;
     alternativeText:  null;
     caption:          null;
@@ -36,23 +49,28 @@ export interface DataAttributes {
     providerMetadata: null;
     createdAt:        Date;
     updatedAt:        Date;
+    blurhash:         string;
 }
 
 export interface Formats {
-    large:     Large;
-    small:     Large;
-    medium:    Large;
     thumbnail: Large;
+    large:     Large;
+    medium:    Large;
+    small:     Large;
 }
 
 export interface Large {
-    ext:    string;
-    url:    string;
-    hash:   string;
-    mime:   string;
     name:   string;
+    hash:   string;
+    ext:    string;
+    mime:   string;
     path:   null;
-    size:   number;
     width:  number;
     height: number;
+    size:   number;
+    url:    string;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface Meta {
 }

@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import useWindowDimensions from '../hooks/useWindowDementions'
 import { ProjectCardType } from '../types/types'
 
 interface ProjectCardProps {
@@ -10,7 +8,6 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const navigate = useNavigate()
-  console.log(project.attributes.cover.data.attributes.url)
 
   return (
     <div className='projectCardWrapper'>
@@ -19,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className='projectCardImageContainer'>
         <img
           className='projectCardImage'
-          src={`http://localhost:1337${project.attributes.cover.data.attributes.url}`}
+          src={`${process.env.REACT_APP_API_URL}${project.attributes.cover.data.attributes.url}`}
           alt='coverPicture'
         ></img>
       </div>
