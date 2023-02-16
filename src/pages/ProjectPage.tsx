@@ -14,11 +14,12 @@ const ProjectPage = () => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     axios
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      .get(`http://localhost:1337/api/projects/${params.projectId}`)
+      .get(`http://localhost:1337/api/projects/${params.projectId}?populate=*`)
       .then((response: AxiosResponse) => {
         setProject(response.data.data as Project)
       })
   }, [params.projectId])
+  console.log(project)
 
   return (
     <div className='projectPageWrapper'>
@@ -26,6 +27,11 @@ const ProjectPage = () => {
         <h1>{project?.attributes.projectName}</h1>
         <div className='metadataContainer'>
           <p className='metaDataDescription'>{project?.attributes.shortDescription}</p>
+          <img
+            className='projectCardImage'
+            src={`http://localhost:1337${project?.attributes.cover.data.attributes.url}`}
+            alt='coverPicture'
+          ></img>
           <div className='articleInfoRow'>
             <div>
               <Link
@@ -33,7 +39,7 @@ const ProjectPage = () => {
                 target='_blank'
                 className='articleInfoRowLink'
               >
-                <FontAwesomeIcon size='2x' icon={brands('git')} />
+                <FontAwesomeIcon size='2x' icon={brands('github')} />
               </Link>
             </div>
             <div>

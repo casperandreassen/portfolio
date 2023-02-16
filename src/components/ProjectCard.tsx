@@ -10,6 +10,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const navigate = useNavigate()
+  console.log(project.attributes.cover.data.attributes.url)
 
   return (
     <div className='projectCardWrapper'>
@@ -18,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className='projectCardImageContainer'>
         <img
           className='projectCardImage'
-          src={`https://api.andreassen.dev${project.attributes.cover.data.attributes.url}`}
+          src={`http://localhost:1337${project.attributes.cover.data.attributes.url}`}
           alt='coverPicture'
         ></img>
       </div>
