@@ -1,8 +1,8 @@
 .homeWrapper {
     height: 100%;
     display: grid;
-    grid-template-columns: [first] 15vw [line3] auto [col4-start] 15vw [end];
-    grid-template-rows: [row1-start] 2vh [row1-end] min-content [third-line] min-content [last-line] min-content [line-five] 2vh [end];
+    grid-template-columns: [start] 15vw [col1] 30vw [col2] 40vw [col3] 15vw [end];
+    grid-template-rows: [start] calc(100vh - 60px) [row1] min-content [row2] min-content [row3] min-content [row4] 2vh [end];
 }
 
 .profilePicture {
@@ -13,23 +13,23 @@
     shape-outside:element();
 }
 
-@media only screen and (max-width: 640px) {
-    .profilePicture {
-        height: 150px;
-    }
-
-    .homeWrapper {
-        grid-template-columns: [first] 5vw [line3] auto [col4-start] 5vw [end];
-    }
-}
-
 @media only screen and (min-width: 1000px) {
     .profilePicture {
         height: 250px;
     }
 
     .homeWrapper {
-        grid-template-columns: [first] 20vw [line3] auto [col4-start] 20vw [end];
+        grid-template-columns: [start] 10vw [col1] 35vw [col2] 45vw [col3] 10vw [end];
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .profilePicture {
+        height: 150px;
+    }
+
+    .homeWrapper {
+        grid-template-columns: [start] 5vw [col1] 40vw [col2] 50vw [col3] 5vw [end];
     }
 }
 
@@ -92,24 +92,34 @@ h1 {
     width: 2px;
 }
 
-.techStackWrapper {
+.contactWrapper {
     grid-column: 2;
     grid-row: 4;
 }
 
-.techStackRow {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 20px;
-}
-.techItem {
+.contactContainer {
+    background-color: var(--background-accent-color);
+    padding: 30px 15px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
 }
 
-.techItem > p {
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.backgroundArt {
+    grid-column: 1 / 5;
+    grid-row: 1;
     margin: 0;
-    text-align: center;
-    font-size: 10pt;
+    background-color: var(--background-color);
 }

@@ -28,15 +28,6 @@ const NavBar = () => {
         >
           PROJECTS
         </Link>
-        <Link
-          data-testid='navLinkContact'
-          className={`navLinkItem ${
-            String(location.pathname) === '/contact' ? 'selectedNavLink' : 'unSelectedNavLink'
-          }`}
-          to='/contact'
-        >
-          CONTACT
-        </Link>
       </div>
       <ThemeToggle />
     </div>
