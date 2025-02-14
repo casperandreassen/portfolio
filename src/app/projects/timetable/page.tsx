@@ -1,5 +1,12 @@
 import { BreadCrumb, BreadCrumbPaths } from "@/app/_components/BreadCrumb";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Timetable / Project",
+  description:
+    "Discover how I built Timetable, a scalable timesheet and expense tracking application using React, TRPC, and Supabase. Learn about its multi-tenant architecture, role-based access, Stripe integration, and automation features that enhance business efficiency.",
+};
 
 export default function Page() {
   const paths: BreadCrumbPaths = [

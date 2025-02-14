@@ -1,5 +1,12 @@
 import { BreadCrumb, BreadCrumbPaths } from "@/app/_components/BreadCrumb";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Lagkasse / Project",
+  description:
+    "Discover how I developed Lagkasse, a multitenant accounting platform for sports teams. Learn about the tech stack, role-based authentication, customizable group structures, and the challenges of building scalable financial software.",
+};
 
 export default function Page() {
   const paths: BreadCrumbPaths = [
