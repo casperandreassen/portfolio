@@ -25,13 +25,13 @@
     @apply text-xl font-bold text-white;
   }
   p {
-    @apply text-base text-white;
+    @apply text-base text-white py-2;
   }
   ul {
     @apply list-inside list-disc;
   }
   section {
-    @apply py-3;
+    @apply pt-4;
   }
 }
 
