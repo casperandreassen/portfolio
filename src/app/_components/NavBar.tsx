@@ -7,14 +7,14 @@ import Image from "next/image";
 
 export function NavBar() {
   return (
-    <nav className="flex flex-row justify-between items-end">
+    <nav className="flex flex-col-reverse sm:flex-row  sm:justify-between sm:items-end">
       <section className="flex flex-row gap-5 items-end">
         <NavBarLink name="Projects" href={"/projects"} />
         <NavBarLink name="About" href={"/about"} />
         <NavBarLink name="Contact" href={"/contact"} />
       </section>
 
-      <Link href={"/"} className="hidden sm:block h-fit pb-1">
+      <Link href={"/"} className="h-fit pb-1">
         <Image src={"/logo.svg"} height={56} width={217} alt="Salminen logo" />
       </Link>
     </nav>
