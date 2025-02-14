@@ -13,13 +13,9 @@ export function NavBar() {
         <NavBarLink name="About" href={"/about"} />
         <NavBarLink name="Contact" href={"/contact"} />
       </section>
-      <Link href={"/"} className="hidden sm:block h-fit">
-        <Image
-          src={"/logo_light.svg"}
-          height={56}
-          width={217}
-          alt="Casper logo"
-        />
+
+      <Link href={"/"} className="hidden sm:block h-fit pb-1">
+        <Image src={"/logo.svg"} height={56} width={217} alt="Salminen logo" />
       </Link>
     </nav>
   );
