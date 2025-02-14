@@ -7,14 +7,19 @@ import Image from "next/image";
 
 export function NavBar() {
   return (
-    <nav className="flex flex-row justify-between">
+    <nav className="flex flex-row justify-between items-end">
       <section className="flex flex-row gap-5 items-end">
         <NavBarLink name="Projects" href={"/projects"} />
         <NavBarLink name="About" href={"/about"} />
         <NavBarLink name="Contact" href={"/contact"} />
       </section>
-      <Link href={"/"} className="hidden sm:block">
-        <Image src={"/logo.svg"} height={1000} width={175} alt="Casper logo" />
+      <Link href={"/"} className="hidden sm:block h-fit">
+        <Image
+          src={"/logo_light.svg"}
+          height={56}
+          width={217}
+          alt="Casper logo"
+        />
       </Link>
     </nav>
   );
