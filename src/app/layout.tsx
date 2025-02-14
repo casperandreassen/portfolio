@@ -25,6 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon-light.ico" sizes="any" />
+        <link
+          rel="icon"
+          href="/favicon-dark.ico"
+          sizes="any"
+          media="(prefers-color-scheme: dark)"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-black text-gray-200 antialiased m-auto w-full px-5 lg:px-0 lg:max-w-3xl pt-10`}
       >
