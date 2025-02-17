@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "./_components/NavBar";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Providers from "./providers";
+import { AlertProvider } from "./_components/AlertProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

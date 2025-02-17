@@ -1,10 +1,5 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Get in touch with me.",
-};
+import ContactForm from "./ContactForm";
 
 export default function Page() {
-  return <p>Hello from contact</p>;
+  return <ContactForm />;
 }

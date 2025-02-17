@@ -10,7 +10,7 @@ export function NavBar() {
     <nav className="flex flex-col-reverse sm:flex-row  sm:justify-between sm:items-end">
       <section className="flex flex-row gap-5 items-end">
         <NavBarLink name="Projects" href={"/projects"} />
-        <NavBarLink name="About" href={"/about"} />
+        {/* <NavBarLink name="About" href={"/about"} /> */}
         <NavBarLink name="Contact" href={"/contact"} />
       </section>
 
